@@ -16,7 +16,7 @@ Configuration BasicServerClient {
     Import-DscResource -ModuleName xDHCPServer, xDnsServer
 
     #
-    # ALL nodes
+    # ALL nodesf
     #
     Write-Verbose 'Processing: All nodes'
     Node $AllNodes.Where({ $true }).NodeName {
@@ -28,7 +28,7 @@ Configuration BasicServerClient {
             RebootNodeIfNeeded   = $true
             AllowModuleOverwrite = $true
             ConfigurationMode    = 'ApplyOnly'
-            #CertificateID       = $node.Thumbprint
+            CertificateID       = $node.Thumbprint
         }
 
         #
@@ -39,7 +39,8 @@ Configuration BasicServerClient {
             xIPAddress 'IPAddress' {
                 IPAddress      = $node.IPAddress
                 InterfaceAlias = 'Ethernet'
-                SubnetMask     = $node.SubnetMask
+               
+
                 AddressFamily  = $node.AddressFamily
             }
         }
@@ -150,8 +151,8 @@ Configuration BasicServerClient {
         # Create a DCHP scope from 10.0.0.100 - 10.0.0.200
         xDhcpServerScope 'DhcpScope10_0_0_0' {
             Name          = 'Lab Clients'
-            IPStartRange  = '10.0.0.100'
-            IPEndRange    = '10.0.0.200'
+            IPStartRange  = '10.0.0.100/24'
+            IPEndRange    = '10.0.0.200/24'
             SubnetMask    = '255.255.255.0'
             LeaseDuration = '00:08:00'
             State         = 'Active'
