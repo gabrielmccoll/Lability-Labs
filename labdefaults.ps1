@@ -20,8 +20,8 @@ $LabHostDefaults = @{
     ResourcePath            = 'C:\Lability\Resources'
 
     ResourceShareName       = 'Resources'
-    DisableLocalFileCaching = 'False'
-    EnableCallStackLogging  = 'False'
+    DisableLocalFileCaching = $false
+    EnableCallStackLogging  = $false
 }
 
 # Default settings for VMs, if not explicitly specified.
@@ -63,5 +63,5 @@ $LabVMDefaults = @{
     GuestIntegrationServices = $true
 }
 
-#Set-LabHostDefault @LabHostDefaults
-Set-LabVMDefault @LabVMDefaults
+Set-LabHostDefault @LabHostDefaults
+#Set-LabVMDefault @LabVMDefaults

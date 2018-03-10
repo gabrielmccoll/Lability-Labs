@@ -26,10 +26,10 @@
           NodeName                  = 'DC01'
           Lability_ProcessorCount   = 2
           Role                      = 'DC'
-          Lability_Media            = '2012R2_x64_Standard_EN_V5_Eval'
+          
 
           # Networking
-          IPAddress                 = '10.0.0.1'
+          IPAddress                 = '10.0.0.1/24'
           DnsServerAddress          = '127.0.0.1'
 
           # Lability extras
@@ -44,7 +44,7 @@
           NodeName                  = 'CLIENT01'
           Lability_StartupMemory    = 2gb
           Role                      = 'Client'
-          Media                     = 'WIN81_x64_Enterprise_EN_V5_Eval'
+          Media                     = 'WIN10_x64_Enterprise_EN_Eval'
 
           # Lability extras
           Lability_CustomBootStrap = @'
@@ -73,10 +73,10 @@
 
           DSCResource = @(
               @{ Name = 'xComputerManagement'; MinimumVersion = '1.3.0.0'; Provider = 'PSGallery' }
-              @{ Name = 'xNetworking'; MinimumVersion = '2.7.0.0' }
-              @{ Name = 'xActiveDirectory'; MinimumVersion = '2.9.0.0' }
-              @{ Name = 'xDnsServer'; MinimumVersion = '1.5.0.0' }
-              @{ Name = 'xDhcpServer'; MinimumVersion = '1.3.0.0' }
+              @{ Name = 'xNetworking'; MinimumVersion = '2.7.0.0'; Provider = 'PSGallery'  }
+              @{ Name = 'xActiveDirectory'; MinimumVersion = '2.9.0.0'; Provider = 'PSGallery' }
+              @{ Name = 'xDnsServer'; MinimumVersion = '1.5.0.0'; Provider = 'PSGallery' }
+              @{ Name = 'xDhcpServer'; MinimumVersion = '1.3.0.0'; Provider = 'PSGallery' }
           )
 
           Media = @()
