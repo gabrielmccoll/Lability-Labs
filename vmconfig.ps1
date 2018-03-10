@@ -151,8 +151,8 @@ Configuration BasicServerClient {
         # Create a DCHP scope from 10.0.0.100 - 10.0.0.200
         xDhcpServerScope 'DhcpScope10_0_0_0' {
             Name          = 'Lab Clients'
-            IPStartRange  = '10.0.0.100/24'
-            IPEndRange    = '10.0.0.200/24'
+            IPStartRange  = '10.0.0.100'
+            IPEndRange    = '10.0.0.200'
             SubnetMask    = '255.255.255.0'
             LeaseDuration = '00:08:00'
             State         = 'Active'
