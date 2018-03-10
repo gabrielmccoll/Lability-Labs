@@ -218,12 +218,12 @@ BasicServerClient -ConfigurationData $ConfigData -OutputPath 'C:\Lability\Config
 
 # Verify lab configuration & see what parts of it already exist (if any)
 Write-Host 'Verifying lab configuration' -ForegroundColor Green
-Test-LabConfiguration -ConfigurationData $ConfigData  -Verbose
+Test-LabConfiguration -ConfigurationData $ConfigData  -Verbose 
 
 # Create the lab from our config
 Write-Host 'Creating lab' -ForegroundColor Green
-Start-LabConfiguration -ConfigurationData $ConfigData -Verbose -IgnorePendingReboot -Credential $AdministratorCredential
+Start-LabConfiguration -ConfigurationData $ConfigData -Verbose -IgnorePendingReboot -Credential $AdministratorCredential -Force
 
 # And once it's created, start the lab environment
 Write-Host 'Starting lab!' -ForegroundColor Green
-Start-Lab -ConfigurationData $ConfigData -Verbose
+Start-Lab -ConfigurationData $ConfigData -Verbose 
