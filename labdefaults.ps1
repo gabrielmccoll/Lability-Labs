@@ -37,7 +37,7 @@ $LabVMDefaults = @{
     # Which Hyper-V switch(es) to assign
     SwitchName               = 'LAB-External'
     # The default media to create the VM from
-    Media                    = '2012R2_x64_Datacenter_EN_V5_Eval'
+    Media                    = '2016_x64_Datacenter_EN_Eval'
     # Settings to inject into the VM's autounattend.xml file, which
     # will be use to configure the base OS
     TimeZone                 = 'UTC'
